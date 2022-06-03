@@ -1,0 +1,19 @@
+// link :: https://leetcode.com/problems/majority-element/submissions/
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        map<int,int> mp;
+        int n = (int)nums.size();
+        for(int i=0;i<n;i++){
+             mp[nums[i]]++;
+        }
+        int ans = 0;
+        for(auto it:mp){
+            if(2*it.second>n){
+                ans = it.first;
+            }
+            else continue;
+        }
+    return ans;
+    }
+};
